@@ -16,7 +16,6 @@ USAGE
                 "krowinski/laravel-xslt": "dev-master",
         },
 ```
-
 2. create welcome.xsl in resources/views
 ```html
 <?xml version="1.0" encoding="utf-8"?>
