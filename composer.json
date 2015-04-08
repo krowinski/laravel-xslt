@@ -28,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "KRowinski\\LaravelXSLT\\": "src/XSLT"
+      "Krowinski\\LaravelXSLT\\": "src/XSLT"
     }
   },
   "minimum-stability": "stable"
