@@ -23,6 +23,8 @@ adding
 
 2. create welcome.xsl in resources/views
 
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet
         version="1.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:exslt="http://exslt.org/common"
@@ -35,10 +37,11 @@ adding
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" cdata-section-elements="script"/>
 
     <xsl:template match="/">
-        <h3>Welcome</h3>
+        <h3>test</h3>
     </xsl:template>
 
 </xsl:stylesheet>
+
 
 3. write some test function like index in WelcomeController.php
 /**
