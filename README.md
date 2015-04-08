@@ -41,9 +41,10 @@ adding
     </xsl:template>
 
 </xsl:stylesheet>
-html```
+```
 
 3. write some test function like index in WelcomeController.php
+```php
 /**
  * Show the application welcome screen to the user.
  *
@@ -57,5 +58,6 @@ public function index()
 
 	return view('welcome');
 }
+```
 
 
