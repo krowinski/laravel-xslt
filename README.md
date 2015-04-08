@@ -5,7 +5,7 @@ USAGE
 
 1. install using composer 
 2. create welcome.xsl in resources/views
-3. write andreplace index in WelcomeController.php
+3. write some test function like index in WelcomeController.php
 /**
  * Show the application welcome screen to the user.
  *
