@@ -1,5 +1,5 @@
 <?php
-namespace Fazi\LaravelXSLT;
+namespace Krowinski\LaravelXSLT;
 
 use ReflectionClass;
 use Illuminate\View\Factory;
