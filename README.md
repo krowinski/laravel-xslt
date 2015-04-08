@@ -3,8 +3,7 @@ xslt + xml for laravel 5
 USAGE
 
 
-1. install using composer 
-adding 
+1. install using composer by adding 
 ```json
  "repositories": [
         {
@@ -12,9 +11,6 @@ adding
             "url":  "https://github.com/krowinski/laravel-xslt.git"
         }
     ],
-    
-    
-    and 
     
      "require": {
                 "krowinski/laravel-xslt": "dev-master",
