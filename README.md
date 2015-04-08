@@ -5,7 +5,7 @@ USAGE
 
 1. install using composer 
 adding 
-
+```json
  "repositories": [
         {
             "type": "git",
@@ -19,7 +19,7 @@ adding
      "require": {
                 "krowinski/laravel-xslt": "dev-master",
         },
-
+```
 
 2. create welcome.xsl in resources/views
 ```html
