@@ -1,5 +1,5 @@
 <?php
-namespace Fazi\LaravelXSLT;
+namespace Krowinski\LaravelXSLT;
 
 use Illuminate\Support\ServiceProvider;
 
