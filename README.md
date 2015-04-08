@@ -22,7 +22,7 @@ adding
 
 
 2. create welcome.xsl in resources/views
-
+```html
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet
         version="1.0"
@@ -41,7 +41,7 @@ adding
     </xsl:template>
 
 </xsl:stylesheet>
-
+html```
 
 3. write some test function like index in WelcomeController.php
 /**
