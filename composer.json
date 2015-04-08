@@ -28,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Fazi\\LaravelXSLT\\": "src/XSLT"
+      "KRowinski\\LaravelXSLT\\": "src/XSLT"
     }
   },
   "minimum-stability": "stable"
