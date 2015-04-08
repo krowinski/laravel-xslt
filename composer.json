@@ -1,0 +1,35 @@
+{
+  "name": "fazi/laravel-xslt",
+  "description": "xslt template engine for laravel",
+  "keywords": [
+    "laravel",
+    "XSLT",
+    "template",
+    "view"
+  ],
+  "authors": [
+    {
+      "name": "Kacper Rowinski",
+      "email": "kacper.rowinski@gmial.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.4.0",
+        "illuminate/support": "5.*",
+        "illuminate/view": "5.*",
+        "illuminate/config": "5.*",
+        "illuminate/console": "5.*",
+        "illuminate/events": "5.*"
+  },
+  "require-dev": {
+  },
+  "suggest": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Fazi\\LaravelXSLT\\": "src/XSLT"
+    }
+  },
+  "minimum-stability": "stable"
+}
