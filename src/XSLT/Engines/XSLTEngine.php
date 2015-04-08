@@ -1,9 +1,9 @@
 <?php
-namespace Fazi\LaravelXSLT\Engines;
+namespace Krowinski\LaravelXSLT\Engines;
 
 use Illuminate\View\Engines\EngineInterface;
 
-class SmartyEngine implements EngineInterface
+class XSLTEngine implements EngineInterface
 {
 
     /** @var Smarty $smarty */
