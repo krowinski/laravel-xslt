@@ -3,7 +3,7 @@ xslt + xml for laravel 5
 USAGE
 
 
-1. install using composer by adding 
+1 install using composer by adding 
 ```json
  "repositories": [
         {
@@ -16,7 +16,7 @@ USAGE
                 "krowinski/laravel-xslt": "dev-master",
         },
 ```
-2. create welcome.xsl in resources/views
+2 create welcome.xsl in resources/views
 ```html
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet
@@ -38,7 +38,7 @@ USAGE
 </xsl:stylesheet>
 ```
 
-3. write some test function like index in WelcomeController.php
+3 write some test function like index in WelcomeController.php
 ```php
 /**
  * Show the application welcome screen to the user.
