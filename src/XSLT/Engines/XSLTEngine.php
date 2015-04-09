@@ -38,6 +38,20 @@ class XSLTEngine implements EngineInterface
         //var_dump($data);
         //echo $this->XSLTSimple->saveXML(); die('zz');
 
+        if (true === class_exists('Debugbar'))
+        {
+            // xml formating for Debugbar
+            $dom = new \DOMDocument;
+            $dom->preserveWhiteSpace = false;
+            $dom->loadXML($this->XSLTSimple->saveXML());
+            $dom->formatOutput = true;
+            $xml_string = $dom->saveXml();
+
+            // add new tab and append xml to it
+            \Debugbar::addCollector(new \DebugBar\DataCollector\MessagesCollector('XML'));
+            \Debugbar::getCollector('XML')->addMessage($xml_string, 'info', false);
+        }
+
         $xsl_load = simplexml_load_file($path);
         $xsl_processor = new \XsltProcessor();
         $xsl_processor->registerPHPFunctions();
