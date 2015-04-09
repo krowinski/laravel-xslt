@@ -3,7 +3,7 @@ xslt + xml for laravel 5
 USAGE
 
 
-1 install using composer in your laraval project
+1 install using composer in your laravel project
 ```bash
 composer require krowinski/laravel-xslt dev-master
 ```
