@@ -42,9 +42,9 @@ composer require krowinski/laravel-xslt dev-master
  */
 public function index()
 {
-\View::addAttr('template', 'hello');
-\View::addTag('template', 'hello')->addAttr('aaaa', 'zzz');
-\View::addTag('test', '123');
+\View::addAtribute('template', 'hello');
+\View::addChild('template', 'hello')->addAtribute('aaaa', 'zzz');
+\View::addChild('test', '123');
 
 	return view('welcome');
 }
