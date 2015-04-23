@@ -2,6 +2,7 @@
 namespace Krowinski\LaravelXSLT\Engines;
 
 use Illuminate\View\Engines\EngineInterface;
+use Illuminate\Support\Facades\URL;
 
 /**
  * Class XSLTEngine
@@ -34,10 +35,22 @@ class XSLTEngine implements EngineInterface
      */
     protected function evaluatePath($path, array $data = [])
     {
-        //$this->XSLTSimple->DataToXmlByTag($data, 'Data', false);
-        //var_dump($data);
-        //echo $this->XSLTSimple->saveXML(); die('zz');
 
+        if (isset($data['form']))
+        {
+            $this->XSLTSimple->addChild('Form', form($data['form']));
+        }
+
+        // adding form errors to xml
+        if (isset($data['errors']))
+        {
+            $this->XSLTSimple->DataToXmlByTag($data['errors']->all(), 'FormErrors', false);
+        }
+
+        // useful stuff
+        $this->XSLTSimple->addChild('URL')->addAttribute('Main', URL::to('/'));
+
+        // adding XML tab
         if (true === class_exists('Debugbar'))
         {
             // xml formating for Debugbar
@@ -52,10 +65,9 @@ class XSLTEngine implements EngineInterface
             \Debugbar::getCollector('XML')->addMessage($xml_string, 'info', false);
         }
 
-        $xsl_load = simplexml_load_file($path);
         $xsl_processor = new \XsltProcessor();
         $xsl_processor->registerPHPFunctions();
-        $xsl_processor->importStylesheet($xsl_load);
+        $xsl_processor->importStylesheet(simplexml_load_file($path));
         return $xsl_processor->transformToXML($this->XSLTSimple);
     }
 }
