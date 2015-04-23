@@ -43,25 +43,6 @@ final class XSLTSimple extends \SimpleXMLElement
     }
 
     /**
-     * @param $pName
-     * @param string $pValue
-     * @return \SimpleXMLElement
-     */
-    public function addTag($pName, $pValue = '')
-    {
-        return $this->addChild($pName, $pValue);
-    }
-
-    /**
-     * @param $pName
-     * @param $pValue
-     */
-    public function addAttr($pName, $pValue)
-    {
-        $this->addAttribute($pName, $pValue);
-    }
-
-    /**
      * @param $pData
      * @param $pTagName
      * @param bool $pAttributes
