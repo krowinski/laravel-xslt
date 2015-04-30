@@ -35,7 +35,7 @@ class XSLTEngine implements EngineInterface
      */
     protected function evaluatePath($path, array $data = [])
     {
-
+        // from form generator
         if (isset($data['form']))
         {
             $this->XSLTSimple->addChild('Form', form($data['form']));
@@ -49,6 +49,9 @@ class XSLTEngine implements EngineInterface
 
         // useful stuff
         $this->XSLTSimple->addChild('URL')->addAttribute('Main', URL::to('/'));
+
+        // trying to add all other stuff to xml
+        $this->XSLTSimple->DataToXmlByTag(json_decode(json_encode($data)), 'Data', false);
 
         // adding XML tab
         if (true === class_exists('Debugbar'))
