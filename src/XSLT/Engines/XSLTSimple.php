@@ -17,10 +17,14 @@ final class XSLTSimple extends \SimpleXMLElement
         foreach ($pData as $key => $value)
         {
             // clean key names
-            $key = preg_replace('/[\W]|_/', '', $key);
-            if (empty($key))
+            $key = preg_replace('/[\W]/', '', $key);
+            if ('' === $key)
             {
                 $key = 'item';
+            }
+            else if (is_numeric($key))
+            {
+                $key = 'item_' . $key;
             }
 
             if (is_array($value) or is_object($value))
