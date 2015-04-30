@@ -16,8 +16,9 @@ final class XSLTSimple extends \SimpleXMLElement
     {
         foreach ($pData as $key => $value)
         {
-            $key = (string)$key;
-            if (is_numeric($key))
+            // clean key names
+            $key = preg_replace('/[\W]|_/', '', $key);
+            if (empty($key))
             {
                 $key = 'item';
             }
