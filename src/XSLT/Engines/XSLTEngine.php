@@ -74,8 +74,8 @@ class XSLTEngine implements EngineInterface
             if (false === \Debugbar::hasCollector('XML'))
             {
                 \Debugbar::addCollector(new \DebugBar\DataCollector\MessagesCollector('XML'));
-                \Debugbar::getCollector('XML')->addMessage($xml_string, 'info', false);
             }
+            \Debugbar::getCollector('XML')->addMessage($xml_string, 'info', false);
         }
 
         $xsl_processor = new \XsltProcessor();
