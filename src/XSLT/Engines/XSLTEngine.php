@@ -51,7 +51,7 @@ class XSLTEngine implements EngineInterface
         $this->XSLTSimple->addChild('URL')->addAttribute('Main', URL::to('/'));
 
         // trying to add all other stuff to xml
-        $this->XSLTSimple->DataToXmlByTag(json_decode(json_encode($data)), 'Data', false);
+        //$this->XSLTSimple->DataToXmlByTag(json_decode(json_encode($data)), 'Data', false);
 
         // adding XML tab
         if (true === class_exists('Debugbar'))
@@ -64,8 +64,11 @@ class XSLTEngine implements EngineInterface
             $xml_string = $dom->saveXml();
 
             // add new tab and append xml to it
-            \Debugbar::addCollector(new \DebugBar\DataCollector\MessagesCollector('XML'));
-            \Debugbar::getCollector('XML')->addMessage($xml_string, 'info', false);
+            if (false === \Debugbar::hasCollector('XML'))
+            {
+                \Debugbar::addCollector(new \DebugBar\DataCollector\MessagesCollector('XML'));
+                \Debugbar::getCollector('XML')->addMessage($xml_string, 'info', false);
+            }
         }
 
         $xsl_processor = new \XsltProcessor();
