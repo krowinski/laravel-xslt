@@ -53,6 +53,13 @@ class XSLTEngine implements EngineInterface
         // trying to add all other stuff to xml
         //$this->XSLTSimple->DataToXmlByTag(json_decode(json_encode($data)), 'Data', false);
 
+        // "davejamesmiller/laravel-breadcrumbs"
+        if (isset($data['breadcrumbs']))
+        {
+            $this->XSLTSimple->DataToXmlByTag($data['breadcrumbs'], 'Breadcrumbs', false);
+        }
+
+        // "barryvdh/laravel-debugbar":
         // adding XML tab
         if (true === class_exists('Debugbar'))
         {
