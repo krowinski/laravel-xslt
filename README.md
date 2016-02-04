@@ -49,9 +49,3 @@ public function index()
 	return view('welcome');
 }
 ```
-
-5. TODO
-- support for xsltcache lib
-- config 
-- start usign git taging (soo lazyyy)
-
