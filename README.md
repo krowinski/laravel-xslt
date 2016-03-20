@@ -1,11 +1,14 @@
+#laravel-xslt 
+
+[![Latest Stable Version](https://poser.pugx.org/krowinski/laravel-xslt/v/stable)](https://packagist.org/packages/krowinski/laravel-xslt) [![Total Downloads](https://poser.pugx.org/krowinski/laravel-xslt/downloads)](https://packagist.org/packages/krowinski/laravel-xslt) [![Latest Unstable Version](https://poser.pugx.org/krowinski/laravel-xslt/v/unstable)](https://packagist.org/packages/krowinski/laravel-xslt) [![License](https://poser.pugx.org/krowinski/laravel-xslt/license)](https://packagist.org/packages/krowinski/laravel-xslt)
+
 xslt + xml for laravel 5
 
 USAGE
 
-
 1 install using composer in your laravel project
-```bash
-composer require krowinski/laravel-xslt dev-master
+```sh
+composer require krowinski/laravel-xslt
 ```
 2 add this line to app.php 'providers' array
 ```php
