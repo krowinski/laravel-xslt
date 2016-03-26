@@ -7,19 +7,16 @@ XSLT template engine for laravel 5
 #Instalation
 
 1. Install using composer in your laravel project
-
 ```sh
 composer require krowinski/laravel-xslt
 ```
 
 2. Add this line to app.php at the end of 'providers' array
-
 ```php
 Krowinski\LaravelXSLT\XSLTServiceProvider::class,
 ```
 
 3. Create welcome.xsl in resources/views
-
 ```html
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -79,7 +76,6 @@ Krowinski\LaravelXSLT\XSLTServiceProvider::class,
 ```
 
 4. Add data to xml using simple xml functions
-
 ```php
 /**
  * Show the application welcome screen to the user.
@@ -96,7 +92,7 @@ public function index()
 }
 ```
 
-5. Add your own data using Laravel Events
+#Add your own data using Laravel Events!
 
 Add to EventServiceProvider.php
  
