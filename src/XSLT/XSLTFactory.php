@@ -1,54 +1,54 @@
 <?php
+
+
 namespace Krowinski\LaravelXSLT;
 
-use ReflectionClass;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Factory;
 use Illuminate\View\ViewFinderInterface;
-use Illuminate\View\Engines\EngineResolver;
-use Illuminate\Contracts\Config\Repository as ConfigContract;
-use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
+use Krowinski\LaravelXSLT\Engines\ExtendedSimpleXMLElement;
+use Krowinski\LaravelXSLT\Exception\MethodNotFoundException;
 
 /**
  * Class XSLTFactory
  * @package Krowinski\LaravelXSLT
+ *
+ * @method ExtendedSimpleXMLElement addArrayToXmlByChild
+ * @method ExtendedSimpleXMLElement addArrayToXml
+ * @method ExtendedSimpleXMLElement addChild
+ * @method ExtendedSimpleXMLElement addAttribute
  */
 class XSLTFactory extends Factory
 {
-
     /**
      * @param EngineResolver $engines
      * @param ViewFinderInterface $finder
-     * @param DispatcherContract $events
-     * @param ConfigContract $config
-     * @param Engines\XSLTSimple $XSLTSimple
+     * @param Dispatcher $events
+     * @param ExtendedSimpleXMLElement $extendedSimpleXMLElement
      */
-    public function __construct(EngineResolver $engines, ViewFinderInterface $finder, DispatcherContract $events, ConfigContract $config, Engines\XSLTSimple $XSLTSimple)
-    {
+    public function __construct(
+        EngineResolver $engines,
+        ViewFinderInterface $finder,
+        Dispatcher $events,
+        ExtendedSimpleXMLElement $extendedSimpleXMLElement
+    ) {
         parent::__construct($engines, $finder, $events);
-        $this->XSLTSimple = $XSLTSimple;
-    }
-
-    /**
-     * @return Engines\XSLTSimple
-     */
-    public function getXSLTSimple()
-    {
-        return $this->XSLTSimple;
+        $this->extendedSimpleXMLElement = $extendedSimpleXMLElement;
     }
 
     /**
      * @param $name
      * @param $arguments
      * @return mixed
-     * @throws \Exception
+     * @throws MethodNotFoundException
      */
     public function __call($name, $arguments)
     {
-        $reflectionClass = new ReflectionClass($this->XSLTSimple);
-        if (!$reflectionClass->hasMethod($name))
-        {
-            throw new \Exception($name . ': Method Not Found');
+        if (false === method_exists($this->extendedSimpleXMLElement, $name)) {
+            throw new MethodNotFoundException($name . ': Method Not Found');
         }
-        return call_user_func_array([$this->XSLTSimple, $name], $arguments);
+
+        return call_user_func_array([$this->extendedSimpleXMLElement, $name], $arguments);
     }
 }
