@@ -87,10 +87,15 @@ Krowinski\LaravelXSLT\XSLTServiceProvider::class,
  * @return Response
  */
 public function index()
-{
-	\View::addAttribute('template', 'hello');
-	\View::addChild('template', 'hello')->addAttribute('aaaa', 'zzz');
-	\View::addChild('test', '123');
+{	
+	// adds to main xml /App attributte name template with value  = hello
+	\View::addAttribute('name template ', 'hello');
+	// create child template to /App with value hello and add aaa and zzz atribute to template.
+	\View::addChild('template', 'hello', false)->addAttribute('aaaa', 'zzz');
+	// creates parent example and adds childs foo and bar to it 
+	\View::addArrayToXmlByChild(['foo', 'bar'], 'example', false); 
+	// add to parent App child bar and zzz
+	\View::addArrayToXml(['bar', 'zzz'], false);
 
 	return view('welcome');
 }
