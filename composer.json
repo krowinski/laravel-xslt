@@ -30,5 +30,8 @@
       "Krowinski\\LaravelXSLT\\": "src/XSLT"
     }
   },
+  "suggest": {
+    "barryvdh/laravel-debugbar": "Allows displaying XML tree content for debug"
+  },
   "minimum-stability": "stable"
 }

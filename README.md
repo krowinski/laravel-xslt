@@ -89,7 +89,7 @@ Krowinski\LaravelXSLT\XSLTServiceProvider::class,
 public function index()
 {	
 	// adds to main xml /App attributte name template with value  = hello
-	\View::addAttribute('name template ', 'hello');
+	\View::addAttribute('name_template ', 'hello');
 	// create child template to /App with value hello and add aaa and zzz atribute to template.
 	\View::addChild('template', 'hello', false)->addAttribute('aaaa', 'zzz');
 	// creates parent example and adds childs foo and bar to it 
@@ -119,7 +119,7 @@ XSLTEngine::EVENT_NAME => [
              
 create file Listeners\XSLTDebugBar.php      
    
-create your event handle for example DebugBar (barryvdh/laravel-debugbar) 
+create your event handle for example DebugBar (https://github.com/barryvdh/laravel-debugbar) 
    
 ```php
 <?php
@@ -134,32 +134,33 @@ use Illuminate\Support\Facades\App;
 use Krowinski\LaravelXSLT\Events\XSLTEngineEvent;
 
 /**
-* Class XSLTDebugBar
-* @package App\Listeners
-*/
+ * Class XSLTDebugBar
+ * @package App\Listeners
+ */
 class XSLTDebugBar
 {
-   /**
-    * @param XSLTEngineEvent $event
-    */
-   public function handle(XSLTEngineEvent $event)
-   {
-       $dom = new \DOMDocument;
-       $dom->preserveWhiteSpace = false;
-       $dom->loadXML($event->getExtendedSimpleXMLElement()->saveXML());
-       $dom->formatOutput = true;
-       $xml_string = $dom->saveXML();
+    /**
+     * @param XSLTEngineEvent $event
+     */
+    public function handle(XSLTEngineEvent $event)
+    {
+        $dom = new \DOMDocument;
+        $dom->preserveWhiteSpace = false;
+        $dom->loadXML($event->getExtendedSimpleXMLElement()->saveXML());
+        $dom->formatOutput = true;
+        $xmlString = $dom->saveXML();
 
-       /** @var DebugBar $debugBar */
-       $debugBar = App::make('debugbar');
-       if (false === $debugBar->hasCollector('XML'))
-       {
-           $debugBar->addCollector(new MessagesCollector('XML'));
-       }
-       /** @var MessagesCollector $collector */
-       $collector = $debugBar->getCollector('XML');
-       $collector->addMessage($xml_string, 'info', false);
-   }
+        /** @var DebugBar $debugBar */
+        $debugBar = App::make('debugbar');
+        if (!$debugBar->hasCollector('XML')) {
+            $debugBar->addCollector(new MessagesCollector('XML'));
+        }
+        /** @var MessagesCollector $collector */
+        $collector = $debugBar->getCollector('XML');
+        $collector->addMessage($xmlString, 'info', false);
+
+        $event->getExtendedSimpleXMLElement()->addChild('debugBar', $debugBar->getJavascriptRenderer()->render());
+    }
 }
 ```   
                
