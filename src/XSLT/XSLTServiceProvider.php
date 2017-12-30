@@ -42,5 +42,7 @@ class XSLTServiceProvider extends ServiceProvider
 
             return $factory;
         });
+
+        return;
     }
 }
