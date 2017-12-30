@@ -52,7 +52,7 @@ class XSLTEngine implements EngineInterface
      */
     public function get($path, array $data = [])
     {
-        $this->dispatcher->fire(self::EVENT_NAME, new XSLTEngineEvent($this->extendedSimpleXMLElement, $data));
+        $this->dispatcher->dispatch(self::EVENT_NAME, new XSLTEngineEvent($this->extendedSimpleXMLElement, $data));
 
         $this->xsltProcessor->importStylesheet(simplexml_load_file($path));
 

@@ -42,14 +42,14 @@ class XSLTFactory extends Factory
     }
 
     /**
-     * @param $name
-     * @param $arguments
+     * @param string $name
+     * @param array $arguments
      * @return mixed
      * @throws MethodNotFoundException
      */
-    public function __call($name, $arguments)
+    public function __call($name, array $arguments)
     {
-        if (false === method_exists($this->extendedSimpleXMLElement, $name)) {
+        if (!method_exists($this->extendedSimpleXMLElement, $name)) {
             throw new MethodNotFoundException($name . ': Method Not Found');
         }
 

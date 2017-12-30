@@ -12,7 +12,7 @@ XSLT template engine for laravel 5
 composer require krowinski/laravel-xslt
 ```
 
-2. Add this line to app.php at the end of 'providers' array
+2. Add this line to app.php at the end of 'providers' array (in file config/app.php)
 
 ```php
 Krowinski\LaravelXSLT\XSLTServiceProvider::class,
