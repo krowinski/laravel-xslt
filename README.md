@@ -21,7 +21,6 @@ Krowinski\LaravelXSLT\XSLTServiceProvider::class,
 3. Create welcome.xsl in resources/views
 
 ```html
-
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exslt="http://exslt.org/common" xmlns:str="http://exslt.org/strings" xmlns:php="http://php.net/xsl" exclude-result-prefixes="exslt str php">
 
@@ -65,6 +64,9 @@ Krowinski\LaravelXSLT\XSLTServiceProvider::class,
                 font-size: 96px;
                 }
             </style>
+
+            <xsl:value-of select="/App/debugBar" disable-output-escaping="yes"/>
+
         </head>
         <body>
             <div class="container">
