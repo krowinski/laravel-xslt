@@ -4,7 +4,7 @@
 namespace Krowinski\LaravelXSLT\Engines;
 
 use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\View\Engines\EngineInterface;
+use Illuminate\Contracts\View\Engine;
 use Krowinski\LaravelXSLT\Events\XSLTEngineEvent;
 use XsltProcessor;
 
@@ -12,7 +12,7 @@ use XsltProcessor;
  * Class XSLTEngine
  * @package Krowinski\LaravelXSLT\Engines
  */
-class XSLTEngine implements EngineInterface
+class XSLTEngine implements Engine
 {
     const EVENT_NAME = XSLTEngineEvent::class;
 

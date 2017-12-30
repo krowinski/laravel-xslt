@@ -18,11 +18,12 @@
     }
   ],
   "require": {
-    "php": ">=5.5.9",
-    "illuminate/support": "5.4.*",
-    "illuminate/view": "5.4.*",
-    "illuminate/console": "5.4.*",
-    "illuminate/events": "5.4.*",
+    "php": ">=7.0",
+    "illuminate/support": "5.5.*",
+    "illuminate/view": "5.5.*",
+    "illuminate/console": "5.5.*",
+    "illuminate/events": "5.5.*",
+    "illuminate/queue": "5.5.*",
     "ext-xsl": "*"
   },
   "autoload": {

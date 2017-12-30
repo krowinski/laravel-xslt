@@ -39,7 +39,7 @@ class XSLTEngineEvent
     /**
      * @return ExtendedSimpleXMLElement
      */
-    public function getExtendedSimpleXMLElement()
+    public function getExtendedSimpleXMLElement() : ExtendedSimpleXMLElement
     {
         return $this->extendedSimpleXMLElement;
     }
@@ -47,7 +47,7 @@ class XSLTEngineEvent
     /**
      * @return array
      */
-    public function getData()
+    public function getData() : array
     {
         return $this->data;
     }

@@ -16,9 +16,9 @@ class ExtendedSimpleXMLElement extends SimpleXMLElement
      * @param array $data
      * @param string $childName
      * @param bool $asAttributes
-     * @return $this
+     * @return ExtendedSimpleXMLElement
      */
-    public function addArrayToXmlByChild(array $data, $childName, $asAttributes = true)
+    public function addArrayToXmlByChild(array $data, string $childName, bool $asAttributes = true) : ExtendedSimpleXMLElement
     {
         return $this->addChild($childName)->addArrayToXml($data, $asAttributes);
     }
@@ -27,10 +27,10 @@ class ExtendedSimpleXMLElement extends SimpleXMLElement
      * @param array $data
      * @param bool $asAttributes
      * @param string $namespace
-     * @return $this
+     * @return ExtendedSimpleXMLElement
      * @throws IncorrectDataTypeException
      */
-    public function addArrayToXml(array $data, $asAttributes = true, $namespace = null)
+    public function addArrayToXml(array $data, bool $asAttributes = true, string $namespace = null) : ExtendedSimpleXMLElement
     {
         foreach ($data as $key => $value) {
             $key = preg_replace('/[\W]/', '', $key);
@@ -62,9 +62,9 @@ class ExtendedSimpleXMLElement extends SimpleXMLElement
      * @param string $name
      * @param string $value
      * @param string $namespace
-     * @return $this
+     * @return ExtendedSimpleXMLElement
      */
-    public function addChild($name, $value = null, $namespace = null)
+    public function addChild($name, $value = null, $namespace = null) : ExtendedSimpleXMLElement
     {
         parent::addChild($name, $value, $namespace);
 
