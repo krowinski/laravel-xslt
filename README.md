@@ -101,7 +101,7 @@ public function index()
 }
 ```
 
-#Add your own data using Laravel Events!
+# Add your own data using Laravel Events!
 
 Add to EventServiceProvider.php
  
