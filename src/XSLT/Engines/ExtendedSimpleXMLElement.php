@@ -7,17 +7,16 @@ use Krowinski\LaravelXSLT\Exception\IncorrectDataTypeException;
 use SimpleXMLElement;
 
 /**
- * Class XSLTSimple
+ * Class ExtendedSimpleXMLElement
  * @package Krowinski\LaravelXSLT\Engines
  */
 class ExtendedSimpleXMLElement extends SimpleXMLElement
 {
     /**
      * @param array $data
-     * @param $childName
-     * @param bool|true $asAttributes
+     * @param string $childName
+     * @param bool $asAttributes
      * @return $this
-     * @throws IncorrectDataTypeException
      */
     public function addArrayToXmlByChild(array $data, $childName, $asAttributes = true)
     {
@@ -26,8 +25,8 @@ class ExtendedSimpleXMLElement extends SimpleXMLElement
 
     /**
      * @param array $data
-     * @param bool|true $asAttributes
-     * @param null|string $namespace
+     * @param bool $asAttributes
+     * @param string $namespace
      * @return $this
      * @throws IncorrectDataTypeException
      */
@@ -61,8 +60,8 @@ class ExtendedSimpleXMLElement extends SimpleXMLElement
 
     /**
      * @param string $name
-     * @param null|string $value
-     * @param null|string $namespace
+     * @param string $value
+     * @param string $namespace
      * @return $this
      */
     public function addChild($name, $value = null, $namespace = null)

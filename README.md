@@ -1,24 +1,24 @@
-#laravel-xslt 
+# laravel-xslt 
 
 [![Latest Stable Version](https://poser.pugx.org/krowinski/laravel-xslt/v/stable)](https://packagist.org/packages/krowinski/laravel-xslt) [![Total Downloads](https://poser.pugx.org/krowinski/laravel-xslt/downloads)](https://packagist.org/packages/krowinski/laravel-xslt) [![Latest Unstable Version](https://poser.pugx.org/krowinski/laravel-xslt/v/unstable)](https://packagist.org/packages/krowinski/laravel-xslt) [![License](https://poser.pugx.org/krowinski/laravel-xslt/license)](https://packagist.org/packages/krowinski/laravel-xslt)
 
 XSLT template engine for laravel 5
 
-#Instalation
+# Instalation
 
-1 Install using composer in your laravel project
+1. Install using composer in your laravel project
 
 ```sh
 composer require krowinski/laravel-xslt
 ```
 
-2 Add this line to app.php at the end of 'providers' array
+2. Add this line to app.php at the end of 'providers' array
 
 ```php
 Krowinski\LaravelXSLT\XSLTServiceProvider::class,
 ```
 
-3 Create welcome.xsl in resources/views
+3. Create welcome.xsl in resources/views
 
 ```html
 
@@ -78,7 +78,7 @@ Krowinski\LaravelXSLT\XSLTServiceProvider::class,
 </xsl:stylesheet>
 ```
 
-4 Add data to xml using simple xml functions
+4. Add data to xml using simple xml functions
 
 ```php
 /**

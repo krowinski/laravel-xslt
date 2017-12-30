@@ -14,7 +14,7 @@ use XsltProcessor;
  */
 class XSLTEngine implements EngineInterface
 {
-    const EVENT_NAME = \Krowinski\LaravelXSLT\Events\XSLTEngineEvent::class;
+    const EVENT_NAME = XSLTEngineEvent::class;
 
     /**
      * @var XsltProcessor
@@ -39,8 +39,7 @@ class XSLTEngine implements EngineInterface
         XsltProcessor $xsltProcessor,
         ExtendedSimpleXMLElement $extendedSimpleXMLElement,
         Dispatcher $dispatcher
-    )
-    {
+    ) {
         $this->extendedSimpleXMLElement = $extendedSimpleXMLElement;
         $this->xsltProcessor = $xsltProcessor;
         $this->dispatcher = $dispatcher;

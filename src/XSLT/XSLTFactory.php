@@ -13,7 +13,6 @@ use Krowinski\LaravelXSLT\Exception\MethodNotFoundException;
 /**
  * Class XSLTFactory
  * @package Krowinski\LaravelXSLT
- *
  * @method ExtendedSimpleXMLElement addArrayToXmlByChild
  * @method ExtendedSimpleXMLElement addArrayToXml
  * @method ExtendedSimpleXMLElement addChild
@@ -21,6 +20,11 @@ use Krowinski\LaravelXSLT\Exception\MethodNotFoundException;
  */
 class XSLTFactory extends Factory
 {
+    /**
+     * @var ExtendedSimpleXMLElement
+     */
+    private $extendedSimpleXMLElement;
+
     /**
      * @param EngineResolver $engines
      * @param ViewFinderInterface $finder
