@@ -18,7 +18,7 @@ class XSLTServiceProvider extends ServiceProvider
      * Register the service provider.
      * @return void
      */
-    public function register() : void
+    public function register()
     {
         $this->app->singleton('view', function ($app) {
             $xsltProcessor = new XsltProcessor();
@@ -42,7 +42,5 @@ class XSLTServiceProvider extends ServiceProvider
 
             return $factory;
         });
-
-        return;
     }
 }
