@@ -65,8 +65,6 @@ Krowinski\LaravelXSLT\XSLTServiceProvider::class,
                 }
             </style>
 
-            <xsl:value-of select="/App/debugBar" disable-output-escaping="yes"/>
-
         </head>
         <body>
             <div class="container">
