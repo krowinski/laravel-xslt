@@ -121,7 +121,7 @@ XSLTEngine::EVENT_NAME => [
              
 create file Listeners\XSLTDebugBar.php
 ```bash
-php artisan make:listener XSLTDebugBar --event \Krowinski\LaravelXSLT\Events\XSLTEngineEvent
+php artisan make:listener XSLTDebugBar --event XSLTEngineEvent
 ```
 
 event content
