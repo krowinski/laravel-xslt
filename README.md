@@ -103,7 +103,7 @@ public function index()
 }
 ```
 
-# Add your own data using Laravel Events!
+# Add xml to debugBar (https://github.com/barryvdh/laravel-debugbar) 
 
 Add to EventServiceProvider.php
  
@@ -119,10 +119,13 @@ XSLTEngine::EVENT_NAME => [
 ],
 ```
              
-create file Listeners\XSLTDebugBar.php      
-   
-create your event handle for example DebugBar (https://github.com/barryvdh/laravel-debugbar) 
-   
+create file Listeners\XSLTDebugBar.php
+```bash
+php artisan make:listener XSLTDebugBar --event \Krowinski\LaravelXSLT\Events\XSLTEngineEvent
+```
+
+event content
+      
 ```php
 <?php
 
@@ -160,8 +163,6 @@ class XSLTDebugBar
         /** @var MessagesCollector $collector */
         $collector = $debugBar->getCollector('XML');
         $collector->addMessage($xmlString, 'info', false);
-
-        $event->getExtendedSimpleXMLElement()->addChild('debugBar', $debugBar->getJavascriptRenderer()->render());
     }
 }
 ```   
