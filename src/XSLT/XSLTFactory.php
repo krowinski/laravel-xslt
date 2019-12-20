@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace Krowinski\LaravelXSLT;
 
@@ -11,8 +11,6 @@ use Krowinski\LaravelXSLT\Engines\ExtendedSimpleXMLElement;
 use Krowinski\LaravelXSLT\Exception\MethodNotFoundException;
 
 /**
- * Class XSLTFactory
- * @package Krowinski\LaravelXSLT
  * @method ExtendedSimpleXMLElement addArrayToXmlByChild
  * @method ExtendedSimpleXMLElement addArrayToXml
  * @method ExtendedSimpleXMLElement addChild
@@ -20,17 +18,8 @@ use Krowinski\LaravelXSLT\Exception\MethodNotFoundException;
  */
 class XSLTFactory extends Factory
 {
-    /**
-     * @var ExtendedSimpleXMLElement
-     */
     private $extendedSimpleXMLElement;
 
-    /**
-     * @param EngineResolver $engines
-     * @param ViewFinderInterface $finder
-     * @param Dispatcher $events
-     * @param ExtendedSimpleXMLElement $extendedSimpleXMLElement
-     */
     public function __construct(
         EngineResolver $engines,
         ViewFinderInterface $finder,
@@ -42,9 +31,6 @@ class XSLTFactory extends Factory
     }
 
     /**
-     * @param string $name
-     * @param array $arguments
-     * @return mixed
      * @throws MethodNotFoundException
      */
     public function __call(string $name, array $arguments)

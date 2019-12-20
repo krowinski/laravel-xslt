@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/krowinski/laravel-xslt/v/stable)](https://packagist.org/packages/krowinski/laravel-xslt) [![Total Downloads](https://poser.pugx.org/krowinski/laravel-xslt/downloads)](https://packagist.org/packages/krowinski/laravel-xslt) [![Latest Unstable Version](https://poser.pugx.org/krowinski/laravel-xslt/v/unstable)](https://packagist.org/packages/krowinski/laravel-xslt) [![License](https://poser.pugx.org/krowinski/laravel-xslt/license)](https://packagist.org/packages/krowinski/laravel-xslt)
 
-XSLT template engine for laravel 5
+XSLT template engine for laravel
 
 # Instalation
 

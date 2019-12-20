@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 
 namespace Krowinski\LaravelXSLT;
 
@@ -8,19 +8,12 @@ use Krowinski\LaravelXSLT\Engines\ExtendedSimpleXMLElement;
 use Krowinski\LaravelXSLT\Engines\XSLTEngine;
 use XSLTProcessor;
 
-/**
- * Class XSLTServiceProvider
- * @package Krowinski\LaravelXSLT
- */
 class XSLTServiceProvider extends ServiceProvider
 {
-    /**
-     * Register the service provider.
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
-        $this->app->singleton('view', function ($app) {
+        $this->app->singleton(
+            'view', static function ($app) {
             $xsltProcessor = new XsltProcessor();
             $xsltProcessor->registerPHPFunctions();
             $extendedSimpleXMLElement = new ExtendedSimpleXMLElement('<App/>');
@@ -35,12 +28,13 @@ class XSLTServiceProvider extends ServiceProvider
             $factory->addExtension(
                 'xsl',
                 'xslt',
-                function () use ($xsltProcessor, $extendedSimpleXMLElement, $app) {
+                static function () use ($xsltProcessor, $extendedSimpleXMLElement, $app) {
                     return new XSLTEngine($xsltProcessor, $extendedSimpleXMLElement, $app['events']);
                 }
             );
 
             return $factory;
-        });
+        }
+        );
     }
 }
